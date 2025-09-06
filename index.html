@@ -77,19 +77,20 @@
                     that transform how businesses manage their digital infrastructure.
                 </p>
                 <div class="hero-buttons">
-                    <a href="products.html" class="btn btn-primary">
+                    <a href="https://drogo-ops-studio.netlify.app" target="_blank" class="btn btn-primary">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
                         </svg>
-                        Explore Products
+                        Try Live Demo
                     </a>
-                    <a href="assets.html" class="btn btn-secondary">
+                    <a href="#tutorial" class="btn btn-secondary">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                            <line x1="8" y1="21" x2="16" y2="21"/>
-                            <line x1="12" y1="17" x2="12" y2="21"/>
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <path d="M12 17h.01"/>
                         </svg>
-                        View Dashboards
+                        Learn How It Works
                     </a>
                 </div>
             </div>
@@ -188,6 +189,277 @@
                     <div style="margin-top: 16px;">
                         <div class="badge info" style="margin-right: 8px;">Customizable</div>
                         <div class="badge success">Responsive</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Tutorial Section -->
+    <section id="tutorial" class="section" style="background: #F7FAFC;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Learn How Drogo OPS Works</h2>
+                <p>Master operational intelligence with our interactive learning platform</p>
+            </div>
+            
+            <div class="tutorial-container">
+                <div class="tutorial-nav">
+                    <button class="tutorial-tab active" data-tab="monitoring">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                        Real-time Monitoring
+                    </button>
+                    <button class="tutorial-tab" data-tab="analytics">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <rect x="7" y="7" width="3" height="9"/>
+                            <rect x="14" y="7" width="3" height="5"/>
+                        </svg>
+                        Advanced Analytics
+                    </button>
+                    <button class="tutorial-tab" data-tab="dashboards">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                        Custom Dashboards
+                    </button>
+                    <button class="tutorial-tab" data-tab="alerts">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                        Smart Alerting
+                    </button>
+                </div>
+                
+                <div class="tutorial-content">
+                    <div class="tutorial-panel active" id="monitoring-panel">
+                        <div class="tutorial-demo">
+                            <div class="demo-header">
+                                <h3>Real-time Infrastructure Monitoring</h3>
+                                <div class="demo-badge">
+                                    <span class="status-dot"></span>
+                                    Live Demo
+                                </div>
+                            </div>
+                            <div class="demo-metrics">
+                                <div class="metric-card">
+                                    <div class="metric-value">99.97%</div>
+                                    <div class="metric-label">Uptime</div>
+                                    <div class="metric-trend positive">+0.02%</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">1.2s</div>
+                                    <div class="metric-label">Response Time</div>
+                                    <div class="metric-trend negative">-0.3s</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">2,847</div>
+                                    <div class="metric-label">Active Users</div>
+                                    <div class="metric-trend positive">+12%</div>
+                                </div>
+                            </div>
+                            <div class="demo-chart">
+                                <h4>System Performance Over Time</h4>
+                                <div class="chart-container">
+                                    <div class="chart-line" style="height: 60px; background: linear-gradient(90deg, #10B981 0%, #059669 50%, #10B981 100%); border-radius: 4px; position: relative;">
+                                        <div class="chart-point" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #10B981; border-radius: 50%; box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tutorial-text">
+                            <h4>What You'll Learn</h4>
+                            <ul class="learning-list">
+                                <li>Set up real-time monitoring for your applications</li>
+                                <li>Configure custom metrics and KPIs</li>
+                                <li>Understand performance baselines and thresholds</li>
+                                <li>Monitor multiple environments simultaneously</li>
+                            </ul>
+                            <div class="tutorial-actions">
+                                <a href="https://drogo-ops-studio.netlify.app" target="_blank" class="btn btn-primary">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                                    </svg>
+                                    Try in Live Demo
+                                </a>
+                                <button class="btn btn-outline" onclick="playTutorial('monitoring')">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                    Watch Tutorial
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-panel" id="analytics-panel">
+                        <div class="tutorial-demo">
+                            <div class="demo-header">
+                                <h3>Advanced Analytics & Insights</h3>
+                                <div class="demo-badge info">
+                                    <span class="status-dot"></span>
+                                    AI-Powered
+                                </div>
+                            </div>
+                            <div class="analytics-grid">
+                                <div class="analytics-card">
+                                    <h4>Anomaly Detection</h4>
+                                    <div class="anomaly-indicator">
+                                        <div class="anomaly-dot normal"></div>
+                                        <span>No anomalies detected</span>
+                                    </div>
+                                </div>
+                                <div class="analytics-card">
+                                    <h4>Predictive Analysis</h4>
+                                    <div class="prediction">
+                                        <div class="prediction-value">+15%</div>
+                                        <div class="prediction-label">Expected traffic increase</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tutorial-text">
+                            <h4>What You'll Learn</h4>
+                            <ul class="learning-list">
+                                <li>Leverage AI for predictive analytics</li>
+                                <li>Identify patterns and anomalies automatically</li>
+                                <li>Generate actionable insights from data</li>
+                                <li>Create custom reports and visualizations</li>
+                            </ul>
+                            <div class="tutorial-actions">
+                                <a href="https://drogo-ops-studio.netlify.app" target="_blank" class="btn btn-primary">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                                    </svg>
+                                    Try in Live Demo
+                                </a>
+                                <button class="btn btn-outline" onclick="playTutorial('analytics')">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                    Watch Tutorial
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-panel" id="dashboards-panel">
+                        <div class="tutorial-demo">
+                            <div class="demo-header">
+                                <h3>Custom Dashboard Builder</h3>
+                                <div class="demo-badge success">
+                                    <span class="status-dot"></span>
+                                    Interactive
+                                </div>
+                            </div>
+                            <div class="dashboard-preview">
+                                <div class="widget-grid">
+                                    <div class="widget">
+                                        <div class="widget-header">CPU Usage</div>
+                                        <div class="widget-content">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 68%;"></div>
+                                            </div>
+                                            <span class="widget-value">68%</span>
+                                        </div>
+                                    </div>
+                                    <div class="widget">
+                                        <div class="widget-header">Memory</div>
+                                        <div class="widget-content">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 45%;"></div>
+                                            </div>
+                                            <span class="widget-value">45%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tutorial-text">
+                            <h4>What You'll Learn</h4>
+                            <ul class="learning-list">
+                                <li>Build custom dashboards with drag-and-drop</li>
+                                <li>Create widgets for different data types</li>
+                                <li>Set up real-time data connections</li>
+                                <li>Share dashboards with your team</li>
+                            </ul>
+                            <div class="tutorial-actions">
+                                <a href="https://drogo-ops-studio.netlify.app" target="_blank" class="btn btn-primary">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                                    </svg>
+                                    Try in Live Demo
+                                </a>
+                                <button class="btn btn-outline" onclick="playTutorial('dashboards')">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                    Watch Tutorial
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-panel" id="alerts-panel">
+                        <div class="tutorial-demo">
+                            <div class="demo-header">
+                                <h3>Smart Alerting System</h3>
+                                <div class="demo-badge warning">
+                                    <span class="status-dot"></span>
+                                    Active
+                                </div>
+                            </div>
+                            <div class="alerts-list">
+                                <div class="alert-item info">
+                                    <div class="alert-icon">ℹ️</div>
+                                    <div class="alert-content">
+                                        <div class="alert-title">High CPU Usage</div>
+                                        <div class="alert-time">2 minutes ago</div>
+                                    </div>
+                                    <div class="alert-status">Resolved</div>
+                                </div>
+                                <div class="alert-item warning">
+                                    <div class="alert-icon">⚠️</div>
+                                    <div class="alert-content">
+                                        <div class="alert-title">Memory Usage Spike</div>
+                                        <div class="alert-time">5 minutes ago</div>
+                                    </div>
+                                    <div class="alert-status">Investigating</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tutorial-text">
+                            <h4>What You'll Learn</h4>
+                            <ul class="learning-list">
+                                <li>Configure intelligent alert thresholds</li>
+                                <li>Set up notification channels (email, Slack, SMS)</li>
+                                <li>Create escalation policies</li>
+                                <li>Reduce alert fatigue with smart filtering</li>
+                            </ul>
+                            <div class="tutorial-actions">
+                                <a href="https://drogo-ops-studio.netlify.app" target="_blank" class="btn btn-primary">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                                    </svg>
+                                    Try in Live Demo
+                                </a>
+                                <button class="btn btn-outline" onclick="playTutorial('alerts')">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                    Watch Tutorial
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

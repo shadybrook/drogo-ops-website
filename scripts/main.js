@@ -483,6 +483,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initMicroInteractions();
     initButtonEnhancements();
     initCardAnimations();
+    initTutorialTabs();
 });
 
 // Enhanced micro-interactions
@@ -649,6 +650,248 @@ function preloadResources() {
 
 // Initialize preloading
 document.addEventListener('DOMContentLoaded', preloadResources);
+
+// Tutorial functionality
+function initTutorialTabs() {
+    const tabs = document.querySelectorAll('.tutorial-tab');
+    const panels = document.querySelectorAll('.tutorial-panel');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // Remove active class from all tabs and panels
+            tabs.forEach(t => t.classList.remove('active'));
+            panels.forEach(p => p.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding panel
+            this.classList.add('active');
+            document.getElementById(`${targetTab}-panel`).classList.add('active');
+            
+            // Add smooth transition effect
+            const activePanel = document.getElementById(`${targetTab}-panel`);
+            activePanel.style.opacity = '0';
+            activePanel.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                activePanel.style.opacity = '1';
+                activePanel.style.transform = 'translateY(0)';
+            }, 50);
+        });
+    });
+}
+
+// Tutorial video functionality
+function playTutorial(topic) {
+    const tutorials = {
+        monitoring: {
+            title: 'Real-time Monitoring Tutorial',
+            description: 'Learn how to set up comprehensive monitoring for your infrastructure',
+            duration: '8:45',
+            url: 'https://drogo-ops-studio.netlify.app'
+        },
+        analytics: {
+            title: 'Advanced Analytics Tutorial',
+            description: 'Master AI-powered analytics and predictive insights',
+            duration: '12:30',
+            url: 'https://drogo-ops-studio.netlify.app'
+        },
+        dashboards: {
+            title: 'Dashboard Builder Tutorial',
+            description: 'Create custom dashboards with drag-and-drop functionality',
+            duration: '15:20',
+            url: 'https://drogo-ops-studio.netlify.app'
+        },
+        alerts: {
+            title: 'Smart Alerting Tutorial',
+            description: 'Configure intelligent alerts and notification systems',
+            duration: '10:15',
+            url: 'https://drogo-ops-studio.netlify.app'
+        }
+    };
+    
+    const tutorial = tutorials[topic];
+    if (tutorial) {
+        showTutorialModal(tutorial);
+    }
+}
+
+function showTutorialModal(tutorial) {
+    // Create modal overlay
+    const modal = document.createElement('div');
+    modal.className = 'tutorial-modal';
+    modal.innerHTML = `
+        <div class="tutorial-modal-content">
+            <div class="tutorial-modal-header">
+                <h3>${tutorial.title}</h3>
+                <button class="tutorial-modal-close">&times;</button>
+            </div>
+            <div class="tutorial-modal-body">
+                <div class="tutorial-preview">
+                    <div class="tutorial-video-placeholder">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="5,3 19,12 5,21"/>
+                        </svg>
+                        <p>Interactive Tutorial</p>
+                        <span class="tutorial-duration">${tutorial.duration}</span>
+                    </div>
+                </div>
+                <div class="tutorial-info">
+                    <p>${tutorial.description}</p>
+                    <div class="tutorial-actions">
+                        <a href="${tutorial.url}" target="_blank" class="btn btn-primary">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                            </svg>
+                            Open in Live Demo
+                        </a>
+                        <button class="btn btn-secondary" onclick="closeTutorialModal()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 6L6 18M6 6l12 12"/>
+                            </svg>
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add modal styles
+    const style = document.createElement('style');
+    style.textContent = `
+        .tutorial-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .tutorial-modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow: hidden;
+            animation: slideUp 0.3s ease;
+        }
+        
+        .tutorial-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px;
+            border-bottom: 1px solid #E2E8F0;
+        }
+        
+        .tutorial-modal-header h3 {
+            margin: 0;
+            color: #1A202C;
+            font-size: 1.25rem;
+        }
+        
+        .tutorial-modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6B7280;
+            padding: 4px;
+        }
+        
+        .tutorial-modal-body {
+            padding: 24px;
+        }
+        
+        .tutorial-preview {
+            margin-bottom: 24px;
+        }
+        
+        .tutorial-video-placeholder {
+            background: #F7FAFC;
+            border: 2px dashed #CBD5E0;
+            border-radius: 12px;
+            padding: 48px;
+            text-align: center;
+            color: #6B7280;
+        }
+        
+        .tutorial-video-placeholder svg {
+            color: #04213D;
+            margin-bottom: 12px;
+        }
+        
+        .tutorial-duration {
+            display: block;
+            font-size: 0.875rem;
+            color: #9CA3AF;
+            margin-top: 8px;
+        }
+        
+        .tutorial-info p {
+            color: #4A5568;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .tutorial-actions {
+            display: flex;
+            gap: 12px;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+            .tutorial-modal-content {
+                width: 95%;
+                margin: 20px;
+            }
+            
+            .tutorial-actions {
+                flex-direction: column;
+            }
+        }
+    `;
+    
+    document.head.appendChild(style);
+    document.body.appendChild(modal);
+    
+    // Close modal functionality
+    const closeBtn = modal.querySelector('.tutorial-modal-close');
+    closeBtn.addEventListener('click', closeTutorialModal);
+    
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeTutorialModal();
+        }
+    });
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+}
+
+function closeTutorialModal() {
+    const modal = document.querySelector('.tutorial-modal');
+    if (modal) {
+        modal.style.animation = 'fadeOut 0.3s ease';
+        setTimeout(() => {
+            modal.remove();
+            document.body.style.overflow = '';
+        }, 300);
+    }
+}
 
 // Service Worker registration (for future PWA capabilities)
 if ('serviceWorker' in navigator) {
